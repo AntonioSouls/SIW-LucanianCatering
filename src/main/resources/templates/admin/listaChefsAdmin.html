@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="ISO-8859-1" />
+		<title>Elenco Chefs Admin| Lucanian Catering</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap">
+	    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">	
+	    <link rel="stylesheet" th:href="@{/css/css-general.css}">
+	</head>
+	
+	<body>
+		<header th:replace="fragments/intestazione-general.html :: intestazione"></header>
+		<div th:replace="fragments/intestazione-general.html :: sfondo3"></div>
+		<div id="corpo">
+			<h1 class="intestazione">Our Chefs</h1>
+			<h4 class="intestazione">Ti presentiamo una lista dei nostri chefs</h4>
+			<div class="lista">
+				
+					<li th:each = "chef: ${chefs}">
+						<div class="contenitoreChefs">
+							<img th:attr="src=@{'/images/' + ${chef.cognome} + '.jpg'},title=${chef.nome},alt=${chef.nome}" class="immagineChefs">
+							<a class="sovrapposizioneChefs" th:href="@{'/chef' + '/' + ${chef.id}}" th:text="${chef.nome}+' '+${chef.cognome}">NomeChef</a>
+						</div>
+						<a class="buttonEliminaCB" th:href="@{'/admin/rimuovichef' + '/' + ${chef.id}}">Elimina Chef</a>
+					</li>
+				
+			</div>
+			<div class="buttonlistaChefsAdmin"> 
+				<a th:href="@{/admin/inseriscichef}">Aggiungi Chef</a>
+			</div>
+		</div>
+	</body>
+	
+</html>

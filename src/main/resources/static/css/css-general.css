@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Trirong');
+
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family: "Trirong", serif;
+}
+
+a {
+	text-decoration: none;
+	color: gold;
+}
+
+a.linkdiverso {
+	text-decoration: underline;
+	color: darkred;
+}
+
+li {
+	list-style: none;
+}
+
+nav {
+	width: 100%;
+	height: 10%;
+	top: 0;
+	background-color: darkred;
+	opacity: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+	z-index: 1;
+	position: center;
+	border-bottom-style: solid;
+	border-bottom-width: 50%;
+	border-bottom-color: gold;
+}
+
+nav #logo {
+	font-weight: 900;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-size: 35px;
+	text-align: center;
+}
+
+nav #navigation {
+	display: flex;
+	justify-content: flex-start;
+	margin-right: 10%;
+	margin-left: 40%;
+}
+
+.nav-item {
+	margin: 10%;
+}
+
+a:hover {
+	color: darkblue;
+}
+
+/**/
+
+#buttons {
+	align-items: center;
+	position: relative;
+	top: 50%;
+	left: 50%;
+}
+
+.button {
+	padding: 20px;
+	font-size: larger;
+	font-weight: lighter;
+}
+
+#sfondo2 {
+	position: fixed;
+	background-image: url(../images/sfondo2.jpg);
+	width: 100%;
+	height: 100vh;
+	background-size: cover;
+	z-index: -1;
+}
+
+#sfondo3 {
+	position: fixed;
+	background-image: url(../images/sfondo3.jpg);
+	width: 100%;
+	height: 100vh;
+	background-size: cover;
+	z-index: -1;
+}
+
+#text {
+	position: fixed;
+	width: 50%;
+	top: 25%;
+	left: 25%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: darkred;
+	background-color: darkgoldenrod;
+	opacity: 0.90;
+	border-radius: 5%;
+	padding: 5% 0;
+}
+
+#textCambiaChefABuffet {
+	position: fixed;
+	width: 50%;
+	top: 15%;
+	left: 25%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: darkred;
+	background-color: darkgoldenrod;
+	opacity: 0.90;
+	border-radius: 5%;
+	padding: 3% 0;
+}
+
+h1.title{
+	padding-bottom: 5%;
+	font-size: 200%;
+}
+
+h1.registration{
+	position: fixed;
+	top: 25%;
+	left: 25%;
+	width: 50%;
+	padding-bottom: 5%;
+	font-size: 200%;
+	color: darkred;
+	background-color: darkgoldenrod;
+	opacity: 0.85;
+	border-radius: 10%;
+	text-align: center;
+}
+
+#returnLoginButton{
+	align-items: center;
+	position: fixed;
+	padding: 1%;
+	top: 60%;
+	left: 50%;
+	background-color: darkred;
+	font-size: 150%;
+	
+}
+
+h1.intestazione, h4.intestazione, h3.intestazione, h2.intestazione{
+	width: 30%;
+	text-align: center;
+	font-family: cursive;
+	font-style: italic;
+	color: darkred;
+	
+}
+
+#riquadri{
+	position: fixed;
+	width: 90%;
+	top: 25%;
+	left: 5%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	opacity: 1;
+	border-radius: 5%;
+	padding: 5% 0;
+	background-color: darkgoldenrod;
+}
+
+.container {
+  position: relative;
+  width: 50%;
+  margin-left: 5%;
+}
+
+.image {
+  border: 5px solid white;
+  display: block;
+  width: 80%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 80%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: darkred;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+  top: 5%;
+  left: 5%;
+  font-size: 300%;
+  text-align: center;
+}
+
+#corpo{
+	position: fixed;
+	width: 90%;
+	top: 15%;
+	left: 5%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	opacity: 0.95;
+	border-radius: 5%;
+	padding: 0% 0;
+	background-color: darkgoldenrod;
+}
+
+#homeAdminText {
+	position: fixed;
+	width: 50%;
+	top: 15%;
+	left: 25%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	color: darkred;
+	background-color: darkgoldenrod;
+	opacity: 0.90;
+	border-radius: 5%;
+	padding: 2% 0% 2% 0%;
+}
+
+.buttonhomeAdmin {
+	margin: 1%;
+	padding: 1%;
+	font-size: larger;
+	font-weight: lighter;
+	background-color: darkred;
+	border-radius: 10%;
+}
+
+.buttonlistaChefsAdmin {
+	margin-bottom: 0.5%;
+	padding: 1%;
+	font-size: larger;
+	font-weight: lighter;
+	background-color: darkred;
+	border-radius: 10%;
+}
+
+a.buttonEliminaCB{
+	left: 30%;
+	position: relative;
+	padding: 1%;
+	font-size: larger;
+	font-weight: lighter;
+	background-color: darkred;
+	border-radius: 10%;
+}
+
+div.lista{
+	position: relative;
+	margin-top: 4%;
+	margin-left: 2%;
+	margin-bottom: 4%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.contenitore {
+  position: relative;
+  width: 50%;
+  margin-left: 5%;
+}
+
+.contenitoreChefs {
+  position: relative;
+  width: 50%;
+  margin-left: 5%;
+}
+
+
+.immagine {
+  border: 5px solid darkred;
+  display: block;
+  width: 150%;
+  height: auto;
+}
+
+.immagineBuffets {
+  border: 5px solid darkred;
+  display: block;
+  width: 160%;
+  height: auto;
+}
+
+.immagineChefs {
+  border: 5px solid darkred;
+  display: block;
+  width: 160%;
+  height: auto;
+}
+
+
+.sovrapposizione {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 160%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: darkred;
+}
+
+.sovrapposizioneChefs {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 160%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: darkred;
+}
+
+.contenitore:hover .sovrapposizione {
+  opacity: 1;
+  top: 5%;
+  left: 5%;
+  font-size: 300%;
+  text-align: center;
+}
+
+.contenitoreChefs:hover .sovrapposizioneChefs {
+  opacity: 1;
+  top: 5%;
+  left: 5%;
+  font-size: 300%;
+  text-align: center;
+}
+
+#schedaChef{
+  	position: fixed;
+	width: 70%;
+	top: 25%;
+	left: 10%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	color: darkred;
+	background-color: goldenrod;
+	opacity: 0.90;
+	border-radius: 5%;
+	padding: 5% 5%;
+}
+
+.credenziali {
+	width: 50%;
+}
+
+.descrizione{
+	display:  flex;
+	flex-direction: row;
+}
+
+.descrizione h3{
+	margin-right: 2%;
+}
+
+.buttonVisualizzaISuoiBuffets {
+	position: absolute;
+	top: 74%;
+	padding: 1%;
+	font-size: large;
+	font-weight: lighter;
+	background-color:darkred;
+	border-radius: 10%;
+}
+
+.fotoChef{
+	border: 5px solid darkred;
+  	display: block;
+  	width: 40%;
+  	height: auto;
+}
+
+.outOfBuffet {
+	margin-right: 10%;
+}
+

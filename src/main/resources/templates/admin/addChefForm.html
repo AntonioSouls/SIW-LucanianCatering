@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1" />
+	<title>Add Chef | Lucanian Catering</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap">
+    	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">	
+    	<link rel="stylesheet" th:href="@{/css/css-general.css}">	
+</head>
+
+<body>
+	<header th:replace="fragments/intestazione-general.html :: intestazione"></header>
+	<div th:replace="fragments/intestazione-general.html :: sfondo2"></div>
+	<div id="text">
+		<h1 class="title">Aggiungi uno chef</h1>
+		<form th:action="@{/addChef}" method="POST" th:object="${chef}">
+			<table>
+				<div th:if="${#fields.hasGlobalErrors()}" role="alert">
+					<h4 align="center" th:each="err : ${#fields.globalErrors()}" th:text="'Errore: ' + ${err}">...</h4>
+				</div>
+				<tr class="button">
+					<th>Nome Chef</th>
+					<td>
+						<input type="text" placeholder="Nome" th:field="*{nome}">
+					</td>
+					<td th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}" th:style="'color:darkred'"></td>
+				</tr>
+				<tr class="button">
+					<th> Cognome Chef</th>
+					<td>
+						<input type="text" placeholder="cognome" th:field="*{cognome}">
+					</td>
+					<td th:if="${#fields.hasErrors('cognome')}" th:errors="*{cognome}" th:style="'color:darkred'"></td>
+				</tr>
+				<tr class="button">
+					<th>Nazionalità Chef</th>
+					<td>
+						<input type="text" placeholder="Nazionalità" th:field="*{nazionalita}">
+					</td>
+					<td th:if="${#fields.hasErrors('nazionalita')}" th:errors="*{nazionalita}" th:style="'color:darkred'"></td>
+				</tr>
+				<tr class="button" id="buttons">
+            				<td>
+                					<button type="submit">Aggiungi Chef</button>
+            				</td>
+        				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

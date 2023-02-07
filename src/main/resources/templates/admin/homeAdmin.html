@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="ISO-8859-1" />
+		<title>AdminHome| Lucanian Catering</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap">
+	    	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">	
+	    	<link rel="stylesheet" th:href="@{/css/css-general.css}">
+	    	<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	
+	<body>
+		<header th:replace="fragments/intestazione-general.html :: intestazione"></header>
+	    <div th:replace="fragments/intestazione-general.html :: sfondo3"></div>
+	    <div id="homeAdminText">
+	    	<h1 th:text="#{header.menuAdmin}">Menu</h1>
+		<div class="buttonhomeAdmin">
+			<a th:href="@{/listchefs}">Visualizza Lista Chef</a>
+   		</div>
+   		<div class="buttonhomeAdmin">
+			<a th:href="@{/listbuffets}">Visualizza Lista Buffet</a>
+   		</div>
+   		<div class="buttonhomeAdmin">
+			<a th:href="@{/visualizzaListaPiatti}">Visualizza Lista Piatti</a>
+   		</div>
+   		<div class="buttonhomeAdmin">
+			<a th:href="@{/admin/inseriscichef}">Inserisci uno chef</a>
+   		</div>
+   		<div class="buttonhomeAdmin">
+			<a th:href="@{/admin/inseriscibuffet}">Inserisci un buffet</a>
+   		</div>
+   		<div class="buttonhomeAdmin">
+			<a th:href="@{/admin/inseriscipiatto}">Inserisci un piatto</a>
+   		</div>
+   		<div class="buttonhomeAdmin">
+			<a th:href="@{/logout}">Logout</a>
+   		</div>
+	    </div>
+	</body>
+</html>

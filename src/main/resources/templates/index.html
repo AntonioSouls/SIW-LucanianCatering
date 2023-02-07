@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+ 
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>  
+	    <meta charset="ISO-8859-1" />
+	    <title>Lucanian Catering</title>
+		<link rel="stylesheet" th:href="@{css/css-first-page.css}"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head> 
+	 
+	<body> 
+		<header th:replace="fragments/intestazione-firstpage.html :: intestazione"></header>
+		<div th:replace="fragments/intestazione-firstpage.html :: sfondo1"></div>
+		<div id="welcome-text">
+			<h1 class="title"><strong>LUCANIAN CATERING</strong></h1>
+				<h2><em>Catering services based on Lucanian dishes</em></h2>
+				<h2><em>The best for every event</em></h2>
+				<h4><em>For more informations <strong>login</strong> or <strong>register</strong> </em></h4>
+			<div id="buttons">
+				<div class="button">
+					<a th:href="@{/login}">Login</a>
+			  	</div>
+				<div class="button">
+					<a th:href="@{/register}">Register</a>
+			  	</div>
+			</div>	  	
+		</div>
+ 	</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1" />
+	<title>Buffet| Lucanian Catering</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap">
+    	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">	
+    	<link rel="stylesheet" th:href="@{/css/css-general.css}">	
+</head>
+
+<body>
+	<header th:replace="fragments/intestazione-general.html :: intestazione"></header>
+	<div th:replace="fragments/intestazione-general.html :: sfondo3"></div>
+	<div id="schedaChef">
+		<div class="credenziali">
+			<h1 th:text="${buffet.nome}">Nome Buffet</h1>
+			<div class="descrizione">
+				<h3> Descrizione:</h3>
+				<p th:text="${buffet.descrizione}"> Descrizione </p>
+			</div>
+			<div class="descrizione">
+				<h3>Chef Proprietario:</h3>
+				<a class="linkdiverso" th:text="${buffet.chefProprietario.nome} + ' ' + ${buffet.chefProprietario.cognome}" th:href="@{'/chef'+'/'+${buffet.chefProprietario.id}}">Nome Cognome</a>
+			</div>
+			<div class="descrizione">
+				<h3>Lista Piatti:</h3>
+				<li th:each="piatto: ${buffet.listaPiatti}">
+					<a class="linkdiverso" th:href="'/visualizzapiatto/'+${piatto.id}" th:text="${piatto.nome} + ' |'"> Lista Piatti </a>
+				</li>
+			</div>
+			<a class="buttonEliminaCB" th:href="@{'/cambiachef/' + ${buffet.id}}">Cambia Chef</a>
+			<a class="buttonEliminaCB" th:href="@{'/visualizzaListaPiatti/'+ ${buffet.id}}">Modifica Lista Piatti</a>
+		</div>
+		<img th:attr="src=@{'/images/' + ${buffet.nome} + '.jpg'},title=${buffet.nome},alt=${buffet.nome}" class="fotoChef">
+	</div>
+</body>
+</html>

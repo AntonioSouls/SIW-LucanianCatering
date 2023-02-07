@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1" />
+	<title>Register | Lucanian Catering</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">	
+    <link rel="stylesheet" th:href="@{/css/css-general.css}">	
+</head>
+
+<body>
+	<header th:replace="fragments/intestazione-general.html :: intestazione"></header>
+	<div th:replace="fragments/intestazione-general.html :: sfondo2"></div>
+	<div id="text">
+    	<h1 class="title" th:text="#{header.registra}">Registrazione</h1>
+	<form th:action="@{/register}" method="POST">
+    <table>
+        <tr class="button">
+            <td>Nome</td>
+            <td><input type="text" placeholder="nome" required
+                       th:field="${user.nome}"/></td>
+            <td th:if="${#fields.hasErrors('user.nome')}"
+                th:errors="${user.nome}" th:style="'color:darkred'"></td>
+        </tr>
+        <tr class="button">
+            <td>Cognome</td>
+            <td><input type="text" placeholder="cognome" required
+                       th:field="${user.cognome}"/></td>
+            <td th:if="${#fields.hasErrors('user.cognome')}"
+                th:errors="${user.cognome}" th:style="'color:darkred'"></td>
+        </tr>
+        <tr class="button">
+            <td>Username</td>
+            <td><input type="text" placeholder="username" required
+                       th:field="${credentials.username}"/></td>
+            <td th:if="${#fields.hasErrors('credentials.username')}"
+                th:errors="${credentials.username}" th:style="'color:darkred'"></td>
+        </tr>
+        <tr class="button">
+            <td>Password</td>
+            <td><input type="password" placeholder="password" required
+                       th:field="${credentials.password}"/></td>
+            <td th:if="${#fields.hasErrors('credentials.password')}"
+                th:errors="${credentials.password}" th:style="'color:darkred'"></td>
+        </tr>
+        <tr class="button" id="buttons">
+            <td>
+                <button type="submit">Registra</button>
+            </td>
+        </tr>
+    </table>
+	</form>
+	</div>
+</body>
+</html>

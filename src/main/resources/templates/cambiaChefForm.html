@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1" />
+	<title>Cambia Chef | Lucanian Catering</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap">
+    	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">	
+    	<link rel="stylesheet" th:href="@{/css/css-general.css}">	
+</head>
+
+<body>
+	<header th:replace="fragments/intestazione-general.html :: intestazione"></header>
+	<div th:replace="fragments/intestazione-general.html :: sfondo2"></div>
+	<div id="textCambiaChefABuffet">
+		<h1 class="title" th:text="'Cambia Chef a ' + ${buffet.nome}">Cambia Chef al Buffet</h1>
+		<p th:text="'Chef Attuale: ' + ${buffet.chefProprietario.nome} + ' ' + ${buffet.chefProprietario.cognome} + ' ( Id = ' + ${buffet.chefProprietario.id} + ' )'"> Chef Attuale</p>
+		<h4 class="title">Scegli il nuovo chef:</h4>
+		<li th:each = "chef : ${chefs}">
+			<p th:text="${chef.nome} + ' ' + ${chef.cognome} + ' ' + '( Id = '+ ${chef.id} + ' )'">Nome Cognome Id</p>
+		</li>
+		<form th:action="@{/cambiachef}" method="POST">
+			<div id="form-block">
+				<div class="button">
+					<span>Id Buffet:</span>
+					<span><input type="text" placeholder="Id Buffet" th:field="${buffet.id}" readonly></span>
+				</div>
+				<div class="button">
+					<span>Id Nuovo Chef:</span>
+					<span><input type="text" placeholder="Id Nuovo Chef" th:field="${buffet.chefProprietario.id}" required></span>
+				</div>
+				<div class="button" id="buttons">
+					<span><button type="submit">Cambia Chef</button></span>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1" />
+	<title>Elenco Piatti| Lucanian Catering</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap">
+    	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">	
+    	<link rel="stylesheet" th:href="@{/css/css-general.css}">	
+</head>
+
+<body>
+	<header th:replace="fragments/intestazione-general.html :: intestazione"></header>
+	<div th:replace="fragments/intestazione-general.html :: sfondo3"></div>
+	<div id="corpo">
+		<h2 class="intestazione" th:text="'Piatti del ' + ${buffet.nome}"></h2>
+		<div class="lista">
+			<li th:each="piatto: ${buffet.listaPiatti}">
+				<div class="contenitore">
+					<img src="/images/ImmaginePiatto.jpg" class="immagineBuffets">
+					<a class="sovrapposizione" th:text="${piatto.nome}" th:href="@{'/visualizzapiatto/'+${piatto.id}}">Nome Piatto</a>
+				</div>
+				<a class="buttonEliminaCB" th:href="@{'/rimuovipiatto/'+${piatto.id}+'/dalbuffet/'+${buffet.id}}">Rimuovi</a>
+			</li>
+		</div>
+		<h2 class="intestazione" th:text="'Piatti fuori dal ' + ${buffet.nome}"></h2>
+		<div class="lista">
+			<li class="outOfBuffet" th:each="dish: ${outOfBuffet}">
+				<div class="contenitore">
+					<a th:text="${dish.nome}" th:href="@{'/visualizzapiatto/'+${dish.id}}">Nome Piatto</a>
+				</div>
+				<a class="buttonEliminaCB" th:href="@{'/aggiungipiatto/'+${dish.id}+'/albuffet/'+${buffet.id}}">Aggiungi</a>
+			</li>
+		</div>
+	</div>
+</body>
+</html>

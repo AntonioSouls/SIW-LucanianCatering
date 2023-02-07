@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1" />
+	<title>Piatto| Lucanian Catering</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap">
+    	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">	
+    	<link rel="stylesheet" th:href="@{/css/css-general.css}">	
+</head>
+
+<body>
+	<header th:replace="fragments/intestazione-general.html :: intestazione"></header>
+	<div th:replace="fragments/intestazione-general.html :: sfondo3"></div>
+	<div id="schedaChef">
+		<div class="credenziali">
+			<h1 th:text="${piatto.nome}">Nome Piatto</h1>
+			<div class="descrizione">
+				<h3> Descrizione:</h3>
+				<p th:text="${piatto.descrizione}"> Descrizione </p>
+			</div>
+		</div>
+		<img th:attr="src=@{'/images/' + ${piatto.nome} + '.jpg'},title=${piatto.nome},alt=${piatto.nome}" class="fotoChef">
+	</div>
+</body>
+</html>

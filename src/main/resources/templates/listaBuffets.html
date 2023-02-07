@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="ISO-8859-1" />
+		<title>Elenco Buffets| Lucanian Catering</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap">
+	    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Trirong">	
+	    <link rel="stylesheet" th:href="@{/css/css-general.css}">
+	</head>
+	
+	<body>
+		<header th:replace="fragments/intestazione-general.html :: intestazione"></header>
+		<div th:replace="fragments/intestazione-general.html :: sfondo3"></div>
+		<div id="corpo" th:if="${chef != null}">
+			<h1>Buffets of chef <span th:text="${chef.nome} + ' ' + ${chef.cognome}"></span></h1>
+			<div class="lista">
+					<li th:each = "buffet: ${buffets}">
+						<div class="contenitore">
+							<img th:attr="src=@{'/images/' + ${buffet.nome} + '.jpg'},title=${buffet.nome},alt=${buffet.nome}" class="immagineBuffets">
+							<a class="sovrapposizione" th:href="@{'/buffet' + '/' + ${buffet.id}}" th:text="${buffet.nome}">NomeChef</a>
+						</div>
+					</li>
+			</div>
+		</div>
+		<div id="corpo" th:if="${chef == null}">
+			<h1 class="intestazione">Our Buffets</h1>
+			<h4 class="intestazione">Ti presentiamo una lista dei buffet disponibili</h4>
+			<div class="lista">
+					<li th:each = "buffet: ${buffets}">
+						<div class="contenitore">
+							<img th:attr="src=@{'/images/' + ${buffet.nome} + '.jpg'},title=${buffet.nome},alt=${buffet.nome}" class="immagineBuffets">
+							<a class="sovrapposizione" th:href="@{'/buffet' + '/' + ${buffet.id}}" th:text="${buffet.nome}">NomeChef</a>
+						</div>
+					</li>
+			</div>
+		</div>
+	</body>
+	
+</html>
